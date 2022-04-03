@@ -29,7 +29,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.5s ease;
+  transition: background 0.3s ease;
 }
 
 body.light {
@@ -72,7 +72,7 @@ main {
   clip-path: circle();
   right: 1rem;
   z-index: 99;
-  transition: 0.5s ease;
+  transition: 0.3s ease;
 }
 
 .circle.light {
@@ -88,7 +88,7 @@ main {
   /* top: 10rem; */
   opacity: 1;
   text-align: center;
-  transition: 0.5s ease;
+  transition: 0.3s ease;
 }
 
 .good-night.light {
@@ -102,7 +102,7 @@ main {
   font-size: 3.5rem;
   opacity: 0;
   text-align: center;
-  transition: 0.5s ease;
+  transition: 0.3s ease;
 }
 
 .good-morning.light {
