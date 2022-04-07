@@ -23,7 +23,7 @@ img {
 
 /*===== BASE ==========================*/
 body {
-  background: var(--dark);
+  background: var(--light);
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -32,17 +32,16 @@ body {
   transition: background 0.3s ease;
 }
 
-body.light {
-  background: var(--grey);
+body.dark {
+  --light: #292C35;
 }
 
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   padding: 2rem;
-  gap: 1rem;
   height: 100%;
 }
 
@@ -59,52 +58,57 @@ main {
   padding: 0 1rem;
 }
 
-.switcher img {
-  width: 4.875rem;
-  height: 4.875rem;
-}
-
-.circle {
+.switcher:before {
+  content: "";
   position: absolute;
-  background: var(--light);
+  background: var(--grey);
   width: 4.5rem;
   height: 4.5rem;
   clip-path: circle();
-  right: 1rem;
-  z-index: 99;
   transition: 0.3s ease;
 }
 
-.circle.light {
-  transform: translateX(-180%)
+body.dark .switcher:before {
+  transform: translateX(180%)
+}
+
+.switcher img {
+  display: block;
+  width: 4.875rem;
+  height: 4.875rem;
 }
 
 /* ---- Mensagens ---- */
 
 .good-night {
-  /* position: absolute; */
-  color: white;
+  color: var(--grey);
   font-size: 3.5rem;
-  /* top: 10rem; */
-  opacity: 1;
   text-align: center;
   transition: 0.3s ease;
+  opacity: 0;
 }
 
-.good-night.light {
-  opacity: 0;
+body.dark .good-night {
+  opacity: 1;
 }
 
 .good-morning {
-  /* position: absolute; */
-  color: black;
-  /* bottom: 10rem; */
+  color: var(--dark);
   font-size: 3.5rem;
-  opacity: 0;
   text-align: center;
   transition: 0.3s ease;
+  opacity: 1;
 }
 
-.good-morning.light {
-  opacity: 1;
+body.dark .good-morning {
+  opacity: 0;
+}
+
+
+/*===== RESPONSIVE ==========================*/
+
+@media (max-width: 350px) {
+  :root {
+    font-size: 13px;
+  }
 }
